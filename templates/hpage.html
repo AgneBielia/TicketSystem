@@ -1,0 +1,137 @@
+<html>
+<head>
+
+ <meta charset="utf-8">
+	<link rel = "stylesheet" type = "text/css" href = "/static/design.css" >
+<title> Homepage </title>
+
+</head>
+<body>
+	<!-- Input new customer record given CustomerID, name and email -->
+	<div id="form">
+	<h3> Add Customer</h3>
+	<form action="addCustomer" method="post"> 
+		CustomerID <input type="text" name="customerID" /><br>
+		Name <input type="text" name="name"/> <br>
+        Email <input type = "text" name="email" /><br>
+		<input type = "submit" value="Add Customer" />
+	</form>
+	
+	<h2>
+    {{msg}} <br>
+    {{error}}
+    </h2>
+	</div>
+
+	<!-- Input new customer support ticket -->
+	<div id="form">
+	<h3> Create ticket</h3>
+	<form action="addTicket" method="post"> 
+		TicketID <input type="text" name="ticketID" /><br>
+		Problem <input type="text" name="problem"/> <br>
+		
+        Priority(1-3)
+		<select name ="priority">
+				   <option value=1> 1 Highest </option>
+				   <option value=2> 2 Moderate </option>
+				   <option value=3> 3 Lowest </option>
+		</select> <br>
+		
+        CustomerID <input type = "text" name="customerID" /><br>
+        ProductID <input type = "text" name="productID" /><br>
+		<input type = "submit" value="Enter ticket" />
+	</form>
+
+	<h2>
+    {{msg1}} <br>
+    {{error1}}
+    </h2>
+	</div>
+
+	<!-- Input new ticket update from a given staff memeber-->
+	<div id="form">
+	<h3> Update ticket</h3>
+	<form action="updateTicket" method="post"> 
+		TicketUpdateID <input type="text" name="ticketUpdateID" /><br>
+		Message: <input type="text" name="message"/> <br>
+        TicketID <input type = "text" name="ticketID" /><br>
+        StaffID <input type = "text" name="staffID" /><br>
+		<input type = "submit" value="Enter ticket update" />
+	</form>
+	
+	<h2>
+    {{msg2}} <br>
+    {{error2}}
+    </h2>
+	</div>
+
+	<!-- Input ticketID to set ticket status to closed -->
+	<div id="form">
+	<h3> Close ticket</h3>
+	<form action="closeTicket" method="post"> 
+        TicketID <input type = "text" name="ticketID" /><br>
+		<input type = "submit" value="Close the ticket" />
+	</form>
+	
+	<h2>
+    {{msg3}} <br>
+    {{error3}}
+    </h2>
+	</div>
+
+	<!-- Displays open tickets  -->
+	<div id="form">
+	<h3>Open tickets</h3>
+	<form action="showTickets" method="get">
+		<input type = "submit" value = "Show open tickets" />
+	</form>
+	
+	<h2>
+    {{msg4}} <br>
+    {{error4}}
+    </h2>
+	</div>
+
+	<!-- Input ticketID to display the original ticket and
+	all the messages from staff -->
+	<div id="form">
+	<h3> Ticket messages </h3>
+	<form action="ticketMsg" method="post"> 
+        TicketID <input type = "text" name="ticketID" /><br>
+		<input type = "submit" value="Show ticket messages" />
+	</form>
+	
+	<h2>
+    {{msg5}} <br>
+    {{error5}}
+    </h2>
+	</div>
+
+	<!-- Displays closed ticket reports  -->
+	<div id="form">
+	<h3>Show closed ticket reports:</h3>
+	<form action="report" method="get">
+		<input type = "submit" value = "Open" />
+	</form>
+	
+	<h2>
+    {{msg6}} <br>
+    {{error6}}
+    </h2>
+	</div>
+
+	<!-- Input CustomerID to remove all customer details -->
+	<div id="form">	
+	<h3> Delete Customer</h3>
+	<form action="deleteCustomer" method="post"> 
+        CustomerID <input type = "text" name="customerID" /><br>
+		<input type = "submit" value="Delete customer" />
+	</form>
+	
+	<h2>
+    {{msg7}} <br>
+    {{error7}}
+    </h2>
+	</div>
+</body>
+</html>

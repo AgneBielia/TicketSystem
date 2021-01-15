@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>  
+	<head>    
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<link rel = "stylesheet" type = "text/css" href = "/static/design.css" >
+		<title>Open Tickets</title>	
+	</head>  
+<body>
+<!-- Homepage button -->
+<form action="/"><input type = "submit" value = "Homepage" ></form>
+
+	<!-- Table of open tickets -->
+	<h1>Open Tickets</h1>
+	<table border = 1>
+    {% for colName in colNames %}
+	    <th> {{colName}} </th>
+		{%endfor%}
+		{% for row in rows %}
+		</tr>
+			{% for item in row%}
+			<td>
+				{{item}}
+			</td>
+			{% endfor %}		
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

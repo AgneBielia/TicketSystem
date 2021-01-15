@@ -1,0 +1,35 @@
+<html>
+<head>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<link rel = "stylesheet" type = "text/css" href = "/static/design.css" >
+<title> Ticket Update </title>
+
+</head>
+<body>
+<!-- Homepage button -->
+<form action="/"><input type = "submit" value = "Homepage" ></form>
+	
+	<!-- Displays the new support ticket update from staff as confirmation -->
+	<h3>Ticket update: </h3>
+	<table border = 1>
+    {% for colName in colNames %}
+	    <th> {{colName}} </th>
+		{%endfor%}
+		{% for row in rows %}
+		</tr>
+			{% for item in row%}
+			<td>
+				{{item}}
+			</td>
+			{% endfor %}		
+		</tr>
+		{% endfor %}
+	</table>
+	
+	<h1>
+    {{msg}} <br>
+    {{error}}
+    </h1>
+	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>  
+	<head>    
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<link rel = "stylesheet" type = "text/css" href = "/static/design.css" >
+		<title>Ticket</title>	
+	</head>  
+<body>
+<!-- Homepage button -->
+<form action="/"><input type = "submit" value = "Homepage" ></form>	
+
+	<!-- Displays the original problem of the support ticket -->
+	<h3>Ticket: </h3>
+    <table border = 1>
+	<td>Customer {{name}} reported on {{product}}: {{problem}}. </td></tr>
+	<td>Status: {{status}}, Priority: {{priority}},	Date posted: {{loggedTime}}</td>
+	</table>
+
+	<!-- Displays all the updates of the support ticket in chronological order -->
+	<h3>Updates: </h3>
+	<table border = 1>
+    {% for colName in colN %}
+	    <th> {{colName}} </th>
+		{%endfor%}
+		{% for row in rows2 %}
+		</tr>
+			{% for item in row%}
+			<td>
+				{{item}}
+			</td>
+			{% endfor %}		
+		</tr>
+		{% endfor %}
+	</table>
+	
+	<h1>
+    {{msg}} <br>
+    {{error}}
+    </h1>
+	
+</body>
+</html>
